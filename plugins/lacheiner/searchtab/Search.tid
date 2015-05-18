@@ -1,0 +1,32 @@
+title: $:/plugins/lacheiner/searchtab/Search
+tags: $:/tags/SideBar
+caption: Search
+
+<div class="tc-search">
+<$edit-text tiddler="$:/temp/searchtab" type="search" tag="input" focus="true" default=""/>
+<$reveal state="$:/temp/searchtab" type="nomatch" text="">
+<$button tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class="tc-btn-invisible">
+<$action-setfield $tiddler="$:/temp/advancedsearch" text={{$:/temp/searchtab}}/>
+<$action-setfield $tiddler="$:/temp/searchtab" text=""/>
+<$action-navigate $to="$:/AdvancedSearch"/>
+{{$:/core/images/advanced-search-button}}
+</$button>
+<$button class="tc-btn-invisible">
+<$action-setfield $tiddler="$:/temp/searchtab" text="" />
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+<$reveal state="$:/temp/searchtab" type="match" text="">
+<$button to="$:/AdvancedSearch" tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class="tc-btn-invisible">
+{{$:/core/images/advanced-search-button}}
+</$button>
+</$reveal>
+</div>
+
+<$reveal state="$:/temp/searchtab" type="nomatch" text="">
+
+<$set name="searchTiddler" value="$:/temp/searchtab">
+{{$:/core/ui/SearchResults}}
+</$set>
+
+</$reveal>

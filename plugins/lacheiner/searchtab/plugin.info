@@ -1,0 +1,7 @@
+{
+	"title": "$:/plugins/lacheiner/searchtab",
+	"description": "Search in separate tab",
+	"author": "Hermann Lacheiner",
+	"core-version": ">=5.0.0",
+	"list": "readme"
+}

@@ -1,0 +1,12 @@
+created: 20150513201633104
+modified: 20150513203850372
+tags: $:/tags/Stylesheet
+title: Responsive button
+type: text/css
+
+button:active {
+    font-weight: bold;
+    color: black;
+    border-style: dashed;
+    border-width: 2px;
+}
